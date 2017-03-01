@@ -22,6 +22,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next){
+    res.locals.env = process.env;
+    res.locals.pretty = (app.get('env') === 'development');
+    next();
+});
+
 app.use('/', index);
 app.use('/users', users);
 

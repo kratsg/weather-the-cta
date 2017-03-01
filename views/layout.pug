@@ -3,5 +3,12 @@ html
   head
     title= title
     link(rel='stylesheet', href='/css/style.css')
+  if env.NODE_ENV == 'development'
+    link(rel='stylesheet', href='/css/weather-icons-wind.css')
+    link(rel='stylesheet'  href='/css/weather-icons.css')
+  else
+    link(rel='stylesheet'  href='/css/weather-icons-wind.min.css')
+    link(rel='stylesheet'  href='/css/weather-icons.min.css')
+
   body
     block content
