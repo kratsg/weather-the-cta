@@ -5,10 +5,4 @@ block content
   p Welcome to #{title}
   div#root
 
-  script.
-    const e = React.createElement;
-    ReactDOM.render(
-      e('div', null, 'Hello, world!'),
-      document.getElementById('root')
-    );
-
+  script(src='/dist/main.js')

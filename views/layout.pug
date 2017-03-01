@@ -6,13 +6,9 @@ html
   if env.NODE_ENV == 'development'
     link(rel='stylesheet', href='/css/weather-icons-wind.css')
     link(rel='stylesheet'  href='/css/weather-icons.css')
-    script(src='https://unpkg.com/react@15/dist/react.js')
-    script(src='https://unpkg.com/react-dom@15/dist/react-dom.js')
   else
     link(rel='stylesheet'  href='/css/weather-icons-wind.min.css')
     link(rel='stylesheet'  href='/css/weather-icons.min.css')
-    script(src='https://unpkg.com/react@15/dist/react.min.js')
-    script(src='https://unpkg.com/react-dom@15/dist/react-dom.min.js')
 
   body
     block content
