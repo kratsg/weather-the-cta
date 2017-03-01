@@ -38,3 +38,6 @@ jspm_packages
 
 # compiled outputs
 dist
+
+# node env
+.env
