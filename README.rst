@@ -23,3 +23,15 @@ Major Dependencies
 - `webpack <https://webpack.js.org/>`_
 - `cta-bus-tracker <https://github.com/projectweekend/Node-CTA-Bus-Tracker>`_
 - `redis <https://redis.io>`_
+
+Environment Variables
+=====================
+
+===================== ======================================================
+Variable              Description
+--------------------- ------------------------------------------------------
+NODE_ENV              Specify ``production`` or ``development``
+CTABUSTRACKER_APIKEY  API key for CTA developer access
+OPENWEATHERMAP_APIKEY OpenWeatherMap API key
+REDIS_CACHE           API caching using MemoryStore (``0``) or Redis (``1``)
+===================== ======================================================
