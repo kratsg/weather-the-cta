@@ -2,9 +2,9 @@
 require('dotenv').config();
 
 (function(env){
-  if(typeof env.CITY_IDS === 'undefined') throw new Error('Specify at least one city for weather.');
-  var cities = env.CITY_IDS.split(',');
-  if(cities.length > 20) throw new Error('Too many cities. Limit to 20.');
+  if(typeof env.CTA_KEY === 'undefined') throw new Error('CTA_KEY: Specify the CTA Developer API key.');
+  if(typeof env.DARKSKY_KEY === 'undefined') throw new Error('DARKSKY_KEY: Specify the API key for Dark Sky API.');
+  if(typeof env.LAT_LONG === 'undefined') throw new Error('LAT_LONG: Specify the latitude and longitude of the location you want weather information for.');
 })(process.env);
 
 var express = require('express');
@@ -33,8 +33,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 app.use(function(req, res, next){
-    req.locals.cities = process.env.CITY_IDS;
-    res.locals.env = process.env;
+    req.city_ids      = process.env.CITY_IDS;
+    req.darksky_key   = process.env.DARKSKY_KEY;
+    req.lat_long      = process.env.LAT_LONG;
+    res.locals.env    = process.env;
     res.locals.pretty = (app.get('env') === 'development');
     next();
 });
