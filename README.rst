@@ -32,6 +32,7 @@ Variable              Description
 --------------------- ------------------------------------------------------
 NODE_ENV              Specify ``production`` or ``development``
 CTABUSTRACKER_APIKEY  API key for CTA developer access
-OPENWEATHERMAP_APIKEY OpenWeatherMap API key
+OPENWEATHERMAP_APIKEY OpenWeatherMap (OWM) API key
 REDIS_CACHE           API caching using MemoryStore (``0``) or Redis (``1``)
+CITY_IDS              OWM City IDs, comma-separated. Limit of 20.
 ===================== ======================================================
