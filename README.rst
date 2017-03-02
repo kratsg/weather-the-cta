@@ -31,8 +31,8 @@ Environment Variables
 Variable              Description
 --------------------- ------------------------------------------------------
 NODE_ENV              Specify ``production`` or ``development``
-CTABUSTRACKER_APIKEY  API key for CTA developer access
-OPENWEATHERMAP_APIKEY OpenWeatherMap (OWM) API key
+CTA_KEY               API key for CTA Bus developer access
+DARKSKY_KEY           Dark Sky API key
 REDIS_CACHE           API caching using MemoryStore (``0``) or Redis (``1``)
-CITY_IDS              OWM City IDs, comma-separated. Limit of 20.
+LAT_LONG              "Latitude,Longitude" of location for weather
 ===================== ======================================================
