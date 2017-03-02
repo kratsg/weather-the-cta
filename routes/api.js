@@ -17,7 +17,7 @@ router.get('/buses', cache('1 minute'), function(req, res, next) {
   res.json({ message: 'Return a list of buses and times', time: + new Date() });
 });
 
-router.get('/weather', cache('5 minutes'), function(req, res, next) {
+router.get('/weather', cache('10 minutes'), function(req, res, next) {
   res.json({ message: 'Return current weather', time: + new Date() });
 });
 
