@@ -8,6 +8,7 @@ Installing
 
 To install, clone this repo and then build it::
 
+  npm install
   npm run build
 
 Webpack
