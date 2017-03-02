@@ -22,3 +22,4 @@ Major Dependencies
 - `React <https://facebook.github.io/react/>`_
 - `webpack <https://webpack.js.org/>`_
 - `cta-bus-tracker <https://github.com/projectweekend/Node-CTA-Bus-Tracker>`_
+- `redis <https://redis.io>`_

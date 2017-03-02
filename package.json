@@ -7,6 +7,7 @@
     "build": "./node_modules/webpack/bin/webpack.js"
   },
   "dependencies": {
+    "apicache": "^0.8.3",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "cta-bus-tracker": "0.0.2",
@@ -15,6 +16,8 @@
     "express": "~4.14.1",
     "morgan": "~1.7.0",
     "pug": "~2.0.0-beta10",
+    "redis": "^2.6.5",
+    "request": "^2.79.0",
     "serve-favicon": "~2.3.2"
   },
   "devDependencies": {
