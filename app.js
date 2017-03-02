@@ -1,5 +1,11 @@
 // load .env config values
-require('dotenv').config()
+require('dotenv').config();
+
+(function(env){
+  if(typeof env.CITY_IDS === 'undefined') throw new Error('Specify at least one city for weather.');
+  var cities = env.CITY_IDS.split(',');
+  if(cities.length > 20) throw new Error('Too many cities. Limit to 20.');
+})(process.env);
 
 var express = require('express');
 var path = require('path');
@@ -27,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 app.use(function(req, res, next){
+    req.locals.cities = process.env.CITY_IDS;
     res.locals.env = process.env;
     res.locals.pretty = (app.get('env') === 'development');
     next();
