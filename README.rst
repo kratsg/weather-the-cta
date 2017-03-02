@@ -22,7 +22,9 @@ Major Dependencies
 - `React <https://facebook.github.io/react/>`_
 - `webpack <https://webpack.js.org/>`_
 - `cta-bus-tracker <https://github.com/projectweekend/Node-CTA-Bus-Tracker>`_
-- `redis <https://redis.io>`_
+- (optional) `redis <https://redis.io>`_
+
+Redis is an optional dependency. If you already have a Redis server set up, feel free to switch to API caching using Redis instead of MemoryStore (see `Environment Variables`_ for more information).
 
 Environment Variables
 =====================
