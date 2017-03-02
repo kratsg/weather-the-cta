@@ -39,4 +39,4 @@ REDIS_CACHE           API caching using MemoryStore (``0``) or Redis (``1``)
 LAT_LONG              "Latitude,Longitude" of location for weather
 ===================== ======================================================
 
-We support `dotenv <https://github.com/motdotla/dotenv>`_. The best way to set these environment variables is to create a ``.env`` file in the same directory as his `README.rst`_ file and add a new key/value pair on each line.
+We support `dotenv <https://github.com/motdotla/dotenv>`_. The best way to set these environment variables is to create a ``.env`` file in the same directory as this `README.rst <README.rst>`_ file and add a new key/value pair on each line.
