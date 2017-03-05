@@ -9,12 +9,12 @@ function withSubscription(WrappedComponent, fetchData) {
       super(props);
 
       this.interval = null;
-      this.state = {timedelta: this.props.timedelta, counter: 0, data: fetchData(props)};
+      this.state = {counter: 0, data: fetchData(props)};
       this.tick = () => this.setState((prevState, props) => ({counter: prevState.counter + 1, data: fetchData(props)}));
     }
 
     startUpdates() {
-      this.interval = setInterval(this.tick, this.state.timedelta);
+      this.interval = setInterval(this.tick, this.props.timedelta);
     }
 
     stopUpdates() {
@@ -34,27 +34,17 @@ function withSubscription(WrappedComponent, fetchData) {
       this.stopUpdates();
     }
 
-    componentWillReceiveProps(nextProps) {
-      console.log('receive props');
-      if(nextProps.timedelta !== this.state.timedelta){
-        console.log('it changed!');
-        this.stopUpdates();
-        this.setState({ timedelta: nextProps.timedelta });
-        this.startUpdates();
-      }
-    }
-
     render() {
-      return <WrappedComponent {...this.state} {...this.props}/>
+      return <WrappedComponent {...this.state} />
     }
   }
-  SubscribedComponent.defaultProps = {name: 'Giordon', timedelta: 1000};
+  SubscribedComponent.defaultProps = {timedelta: 1000};
   return SubscribedComponent;
 }
 
 class WeatherWidget extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}. I have run the subscription {this.props.counter} times.</h1>
+    return <h1>I have run the subscription {this.props.counter} times.</h1>
   }
 }
 
