@@ -16,8 +16,10 @@ var renderRecursive = (path, index, val) => {
 
 class Item extends React.Component {
   render() {
+    let topLine = '<root>';
+    if(this.props.index !== ''){topLine = this.props.index+':';}
     return <li>
-      {this.props.index}:
+      {topLine}
       { renderRecursive(this.props.path, this.props.index, this.props.data) }
     </li>
   }
@@ -46,7 +48,6 @@ class Dict extends React.Component {
     </ul>
   }
 }
-Dict.defaultProps = {index: '/', path: '/'}
 
 class WeatherWidget extends React.Component {
   render() {
@@ -54,7 +55,7 @@ class WeatherWidget extends React.Component {
     return (
       <div>
         <h1>Data</h1>
-        <Dict data={this.props.data} />
+        <Item key='/' path='/' index='' data={this.props.data} />
       </div>
     );
   }
