@@ -11,10 +11,7 @@ class WeatherWidget extends React.Component {
       <div>
         <h1>Data</h1>
         <ul>
-        { Object.keys(this.props.data).map((key) => {
-          console.log(key);
-          return (<li key={key}>{key}: {this.props.data[key]}</li>);
-        })}
+        { Object.keys(this.props.data).map((key) => <li key={key}>{key}: {this.props.data[key]}</li>) }
         </ul>
       </div>
     );
