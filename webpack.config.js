@@ -5,6 +5,12 @@ module.exports = {
   entry: './src/main.jsx',
   output: { path: __dirname, filename: 'dist/main.js' },
   resolve: { extensions: [".js", ".json", ".jsx"] },
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
   module: {
     loaders: [
       {
