@@ -60,7 +60,11 @@ class WeatherWidget extends React.Component {
   }
 }
 
-const SubscribedWeatherWidget = Logged(Subscribed(WeatherWidget, () => request({uri: `${document.location.href.replace(/\/$/,'')}/api/weather`, json: true}).catch(console.error)));
+var weatherOptions = {
+  uri: `${document.location.href.replace(/\/$/,'')}/api/weather`,
+  json: true
+}
+const SubscribedWeatherWidget = Logged(Subscribed(WeatherWidget, () => request(weatherOptions).catch(console.error)));
 
 ReactDOM.render(
   <SubscribedWeatherWidget timedelta='5000' />,
