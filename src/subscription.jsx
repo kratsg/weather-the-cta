@@ -10,7 +10,7 @@ export const Subscribed = (WrappedComponent, fetchData) => {
       super(props);
 
       this.interval = null;
-      this.state = {counter: 0, data: fetchData(props)};
+      this.state = {counter: 0, data: {}};
       this.tick = () => fetchData(props).then(data => {this.setState((prevState, props) => ({counter: prevState.counter + 1, data: data}))});
     }
 

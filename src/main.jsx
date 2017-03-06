@@ -6,11 +6,22 @@ import { Subscribed } from './subscription';
 
 class WeatherWidget extends React.Component {
   render() {
-    return <h1>Data = {this.props.data}</h1>
+    if(!Object.keys(this.props.data).length) return (<div><h1>No data yet...</h1></div>);
+    return (
+      <div>
+        <h1>Data</h1>
+        <ul>
+        { Object.keys(this.props.data).map((key) => {
+          console.log(key);
+          return (<li key={key}>{key}: {this.props.data[key]}</li>);
+        })}
+        </ul>
+      </div>
+    );
   }
 }
 
-const SubscribedWeatherWidget = Logged(Subscribed(WeatherWidget, () => Promise.resolve({})));
+const SubscribedWeatherWidget = Logged(Subscribed(WeatherWidget, () => Promise.resolve({name: 'Giordon'})));
 
 ReactDOM.render(
   <SubscribedWeatherWidget timedelta='5000' />,
