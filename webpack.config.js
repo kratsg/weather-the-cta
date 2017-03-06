@@ -4,6 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: './src/main.jsx',
   output: { path: __dirname, filename: 'dist/main.js' },
+  resolve: { extensions: [".js", ".json", ".jsx"] },
   module: {
     loaders: [
       {
