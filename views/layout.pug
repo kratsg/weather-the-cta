@@ -2,6 +2,8 @@ doctype html
 html
   head
     title= title
+    script(src='https://use.fontawesome.com/14eaad7299.js')
+
     if env.NODE_ENV == 'development'
       link(rel='stylesheet', href='/css/weather-icons-wind.css')
       link(rel='stylesheet'  href='/css/weather-icons.css')
@@ -13,5 +15,5 @@ html
 
     link(rel='stylesheet', href='/css/style.css')
 
-  body
+  body.bg-inverse.text-white
     block content
