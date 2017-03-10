@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/js/main.jsx',
+  entry: './src/jsx/main.jsx',
   output: { path: __dirname, filename: 'dist/js/main.js' },
   resolve: { extensions: [".js", ".json", ".jsx"] },
   node: {
