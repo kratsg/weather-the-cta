@@ -10,7 +10,7 @@ export const SubscribedHOC = (WrappedComponent, fetchData) => {
       super(props);
 
       this.interval = null;
-      this.state = {counter: 0, data: {}};
+      this.state = {counter: 0, data: null};
       this.tick = () => fetchData()
                               .then(data => {this.setState((prevState, props) => ({counter: prevState.counter + 1, data: data}))})
                               .catch(console.error);
