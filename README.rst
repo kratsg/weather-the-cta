@@ -9,11 +9,13 @@ Installing
 To install, clone this repo and then build it::
 
   npm install
-  grunt
+  grunt  # runs grunt webpack sass cssmin
 
 or if you don't have `grunt <https://gruntjs.com>`_ available::
 
-  npm run jsx
+  npm run webpack sass cssmin
+
+Note: I would suggest using ``grunt`` to compile all the ``jsx`` and ``sass`` files. There is a difference between ``cssmin`` from ``npm run`` and from ``grunt cssmin`` that I can't figure out.
 
 
 Webpack

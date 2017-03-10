@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "jsx": "./node_modules/webpack/bin/webpack.js",
-    "sass": "node-sass --output-style expanded --source-map true --precision 6 src/sass/bootstrap.scss dist/css/bootstrap.css"
+    "webpack": "./node_modules/webpack/bin/webpack.js",
+    "sass": "./node_modules/node-sass/bin/node-sass --output-style expanded --source-map true --precision 6 src/sass/bootstrap.scss dist/css/bootstrap.css",
+    "cssmin": "./node_modules/clean-css/bin/cleancss --output dist/css/bootstrap.min.css dist/css/bootstrap.css"
   },
   "dependencies": {
     "apicache": "^0.8.3",
