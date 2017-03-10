@@ -104,5 +104,6 @@ This startup script can be executed from ``/home/pi/.config/lxsession/LXDE-pi/au
   @xset -dpms
   @xset s noblank
   @./startup.sh
+  @chromium-browser --incognito --kiosk 0.0.0.0:3000
 
-which looks like this for me right now.
+which looks like this for me right now. The log file when this runs on startup is located at ``/home/pi/.cache/lxsession/LXDE-pi/run.log``.
