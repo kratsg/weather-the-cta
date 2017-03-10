@@ -17,6 +17,14 @@ or if you don't have `grunt <https://gruntjs.com>`_ available::
 
 Note: I would suggest using ``grunt`` to compile all the ``jsx`` and ``sass`` files. There is a difference between ``cssmin`` from ``npm run`` and from ``grunt cssmin`` that I can't figure out.
 
+Grunt
+~~~~~
+
+The `Gruntfile.js <Gruntfile.js>`_ is defined to contain all the tasks that I would normally run to transpile and bundle jsx, compile and minify sass, into a ``dist/`` location. At the moment, there are three commands defined:
+
+- webpack: imports the `webpack.config.js <webpack.config.js>`_ and runs ``webpack``
+- sass: uses ``node-sass`` to take ``src/sass`` to ``dist/css``
+- cssmin: uses ``cleancss`` to take ``dist/css/*.css``
 
 Webpack
 ~~~~~~~
