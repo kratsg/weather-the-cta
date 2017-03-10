@@ -1,0 +1,6 @@
+{
+    "uid": "weather-the-cta",
+    "append": true,
+    "script": "bin/www",
+    "sourceDir": "/home/pi/weather-the-cta"
+}
