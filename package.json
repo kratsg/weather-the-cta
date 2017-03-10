@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "jsx": "./node_modules/webpack/bin/webpack.js"
+    "jsx": "./node_modules/webpack/bin/webpack.js",
+    "sass": "node-sass --output-style expanded --source-map true --precision 6 src/sass/bootstrap.scss dist/css/bootstrap.css"
   },
   "dependencies": {
     "apicache": "^0.8.3",
@@ -28,6 +29,7 @@
     "babel-preset-react": "^6.23.0",
     "grunt": "^1.0.1",
     "grunt-webpack": "^2.0.1",
+    "node-sass": "^4.5.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "webpack": "^2.2.1"
