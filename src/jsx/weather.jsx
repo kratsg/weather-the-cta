@@ -32,14 +32,14 @@ export class WeatherWidget extends React.Component {
     if(this.props.data === undefined || this.props.data === null || !Object.keys(this.props.data).length) return (
       <div className="card card-inverse bg-inverse">
         <div className="card-header" style={cardHeaderStyle}>
-          <h1 className="display-1">
+          <h1 className="display-2">
             <i className="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i><span className="sr-only">Loading...</span>
            &nbsp; Loading weather data...
           </h1>
         </div>
         <div className="card-block">
-          <h1 className="card-title">Looking out the window</h1>
-          <h3 className="card-text">Should take about 5 seconds...</h3>
+          <h1 className="card-title display-3">Looking out the window</h1>
+          <h3 className="card-text display-4">Should take about 5 seconds...</h3>
         </div>
         <div className="card-footer text-muted">
           <div className="row">
@@ -52,7 +52,7 @@ export class WeatherWidget extends React.Component {
     <div className="card-deck">
       <div className="card card-inverse bg-inverse">
         <div className="card-header" style={cardHeaderStyle}>
-          <h1 className="display-1">
+          <h1 className="display-2">
             Current Conditions
           </h1>
         </div>
@@ -62,8 +62,8 @@ export class WeatherWidget extends React.Component {
               <i className={`fa-5x wi wi-forecast-io-${this.props.data.currently.icon} fa-fw`} aria-hidden="true" /><span className="sr-only">Current weather conditions</span>
             </div>
             <div className="col-10">
-              <h1 className="card-title">{Math.round(this.props.data.currently.temperature)}<i className="wi wi-degrees" />, feels like {Math.round(this.props.data.currently.apparentTemperature)}<i className="wi wi-degrees" /></h1>
-              <h3 className="card-text">{this.props.data.currently.summary}</h3>
+              <h1 className="card-title display-3">{Math.round(this.props.data.currently.temperature)}<i className="wi wi-degrees" />, feels like {Math.round(this.props.data.currently.apparentTemperature)}<i className="wi wi-degrees" /></h1>
+              <h3 className="card-text display-4">{this.props.data.currently.summary}</h3>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export class WeatherWidget extends React.Component {
       </div>
       <div className="card card-inverse bg-inverse">
         <div className="card-header" style={cardHeaderStyle}>
-          <h1 className="display-1">
+          <h1 className="display-2">
             Today's Forecast
           </h1>
         </div>
@@ -86,9 +86,9 @@ export class WeatherWidget extends React.Component {
               <i className={`fa-5x wi wi-forecast-io-${this.props.data.daily.icon} fa-fw`} aria-hidden="true" /><span className="sr-only">Today's weather forecast</span>
             </div>
             <div className="col-10">
-              <h1 className="card-title">
+              <h1 className="card-title display-3">
                 <span className="text-primary">{Math.round(this.props.data.daily.data[0].temperatureMax)}<i className="wi wi-degrees" /></span> <span className="text-info">{Math.round(this.props.data.daily.data[0].temperatureMin)}<i className="wi wi-degrees" /></span></h1>
-              <h3 className="card-text">{this.props.data.daily.summary}</h3>
+              <h3 className="card-text display-4">{this.props.data.daily.summary}</h3>
             </div>
           </div>
         </div>
