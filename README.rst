@@ -3,6 +3,16 @@ Weathering the CTA
 
 This is a single-page app + node server API that will display the weather, CTA bus times, and other things what have you.
 
+.. image:: https://raw.githubusercontent.com/kratsg/weather-the-cta/master/screenshots/screenshot_loading.png
+    :alt: Screenshot of loading page
+    :width: 40%
+    :align: center
+
+.. image:: https://raw.githubusercontent.com/kratsg/weather-the-cta/master/screenshots/screenshot_loaded.png
+    :alt: Screenshot of loaded page
+    :width: 40%
+    :align: center
+
 Installing
 ----------
 
