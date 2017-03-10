@@ -97,8 +97,7 @@ This startup script can be executed from ``/home/pi/.config/lxsession/LXDE-pi/au
 
   @lxpanel --profile LXDE-pi
   @pcmanfm --desktop --profile LXDE-pi
-  # disable screensaver by commenting out
-  #@xscreensaver -no-splash
+  #@xscreensaver -no-splash  # disable screensaver by commenting out
   @point-rpi
   # stop X11 from turning off automatically
   @xset s off
