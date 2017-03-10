@@ -29,6 +29,7 @@ Major Dependencies
 - `express <http://expressjs.com/>`_
 - `React <https://facebook.github.io/react/>`_
 - `grunt <https://gruntjs.com>`_
+
   - `webpack <https://webpack.js.org/>`_
   - `node-sass <https://github.com/sass/node-sass>`_
   - `cssmin <https://github.com/gruntjs/grunt-contrib-cssmin>`_
