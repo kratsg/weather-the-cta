@@ -40,8 +40,10 @@ export class WeatherWidget extends React.Component {
           <h1 className="card-title">Looking out the window</h1>
           <h3 className="card-text">Should take about 5 seconds...</h3>
         </div>
-        <div className="card-footer text-muted row">
-          <p className="col-sm text-left">Weather data provided by Forecast.io</p>
+        <div className="card-footer text-muted">
+          <div className="row">
+            <p className="col-sm text-left">Weather data provided by Forecast.io</p>
+          </div>
         </div>
       </div>
     );
@@ -57,9 +59,11 @@ export class WeatherWidget extends React.Component {
         <h1 className="card-title">Summary</h1>
         <h3 className="card-text">{this.props.data.currently.summary}</h3>
       </div>
-      <div className="card-footer text-muted row">
-        <p className="col-sm text-left">{formatDate(this.props.data.currently.time*1000)}</p>
-        <p className="col-sm text-sm-right">{this.props.data.latitude}, {this.props.data.longitude}</p>
+      <div className="card-footer text-muted">
+        <div className="row">
+          <p className="col-sm text-left">{formatDate(this.props.data.currently.time*1000)}</p>
+          <p className="col-sm text-sm-right">{this.props.data.latitude}, {this.props.data.longitude}</p>
+        </div>
       </div>
     </div>);
   }
