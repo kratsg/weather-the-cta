@@ -9,7 +9,12 @@ Installing
 To install, clone this repo and then build it::
 
   npm install
+  grunt
+
+or if you don't have `grunt <https://gruntjs.com>`_ available::
+
   npm run build
+
 
 Webpack
 ~~~~~~~
