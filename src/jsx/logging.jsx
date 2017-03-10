@@ -28,6 +28,15 @@ export var renderRecursive = (path, index, val) => {
     return <span>{val}</span>
 }
 
+/*
+An example of rendering a data dump:
+
+  <div className="card card-inverse bg-inverse">
+    <h1>Debugging</h1>
+    <Item key='/' path='/' index='' data={this.props.data} />
+  </div>
+*/
+
 export class Item extends React.Component {
   render() {
     let topLine = '<root>';

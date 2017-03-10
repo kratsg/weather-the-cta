@@ -1,5 +1,4 @@
 import React from 'react';
-import { Item } from './logging';
 
 var formatDate = timestamp => {
   var days = new Array("Sunday", "Monday", "Tuesday",
