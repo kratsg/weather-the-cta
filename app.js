@@ -5,6 +5,8 @@ require('dotenv').config();
   if(typeof env.CTA_KEY === 'undefined') throw new Error('CTA_KEY: Specify the CTA Developer API key.');
   if(typeof env.DARKSKY_KEY === 'undefined') throw new Error('DARKSKY_KEY: Specify the API key for Dark Sky API.');
   if(typeof env.LAT_LONG === 'undefined') throw new Error('LAT_LONG: Specify the latitude and longitude of the location you want weather information for.');
+  if(typeof env.CTA_VERSION === 'undefined') env.CTA_VERSION = 'v2';
+
 })(process.env);
 
 var express = require('express');
@@ -36,6 +38,8 @@ app.use(function(req, res, next){
     req.city_ids      = process.env.CITY_IDS;
     req.darksky_key   = process.env.DARKSKY_KEY;
     req.lat_long      = process.env.LAT_LONG;
+    req.cta_key       = process.env.CTA_KEY;
+    req.cta_version   = process.env.CTA_VERSION;
     res.locals.env    = process.env;
     res.locals.pretty = (app.get('env') === 'development');
     next();
@@ -66,7 +70,7 @@ app.use(function(err, req, res, next) {
   // render the error
   res.status(err.status || 500);
   if(req.headers["content-type"] == 'application/json' || req.headers["accept"] == 'application/json' || req.url.indexOf('/api') !== -1){
-    res.json({message: res.locals.message, error: res.locals.error});
+    res.json({message: res.locals.message, error: res.locals.error.name});
   } else {
     res.render('error');
   }
