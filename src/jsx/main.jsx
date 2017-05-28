@@ -5,7 +5,7 @@ import request from 'request-promise';
 import { LoggedHOC } from './logging';
 import { SubscribedHOC } from './subscription';
 import { WeatherWidget } from './weather';
-import { CTABusesWidget } from './transport';
+import { CTABusesWidget } from './transit';
 
 var weatherOptions = {
   uri: `${document.location.href.replace(/\/$/,'')}/api/weather`,
@@ -13,6 +13,7 @@ var weatherOptions = {
 }
 
 const SubscribedWeatherWidget = LoggedHOC(SubscribedHOC(WeatherWidget, () => request(weatherOptions)));
+const SubscribedTransitWidget = LoggedHOC(SubscribedHOC(TransitWidget, () => reques(transitOptions)));
 
 ReactDOM.render(
   <SubscribedWeatherWidget timedelta='5000' debug={null} />,
