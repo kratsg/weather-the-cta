@@ -57,6 +57,13 @@ Major Dependencies
 
 Redis is an optional dependency. If you already have a Redis server set up, feel free to switch to API caching using Redis instead of MemoryStore (see `Environment Variables`_ for more information).
 
+Configuration
+=============
+
+Configuration is done through environment variables. See the next section for a list of these variables. This can be a little bit tricky to set up for the first time.
+
+We support `dotenv <https://github.com/motdotla/dotenv>`_. The best way to set these environment variables is to create a ``.env`` file in the same directory as this `README.rst <README.rst>`_ file and add a new key/value pair on each line.
+
 Environment Variables
 ---------------------
 
@@ -70,7 +77,15 @@ REDIS_CACHE           API caching using MemoryStore (``0``) or Redis (``1``)
 LAT_LONG              "Latitude,Longitude" of location for weather
 ===================== ======================================================
 
-We support `dotenv <https://github.com/motdotla/dotenv>`_. The best way to set these environment variables is to create a ``.env`` file in the same directory as this `README.rst <README.rst>`_ file and add a new key/value pair on each line.
+DarkSky
+~~~~~~~
+
+The configuration for the DarkSky API is pretty straightforward as you feed it a latitude/longitude pair which you can look up using Google Maps or something similar. The key is also grabbed from their website, so make sure you set up an account.
+
+Chicago Transit Authority
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This configuration is subtly more complicated. In order to display bus times for stops you want, you need to find the stop identifiers. We provide API routes for this, so when you initially set this up for the first time, you can access specific API endpoints, look up the stop IDs, and then configure this in your environment variables.
 
 Auto-running
 ============
