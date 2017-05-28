@@ -65,7 +65,7 @@ app.use(function(err, req, res, next) {
 
   // render the error
   res.status(err.status || 500);
-  if(req.headers["content-type"] == 'application/json' || req.headers["accept"] == 'application/json'){
+  if(req.headers["content-type"] == 'application/json' || req.headers["accept"] == 'application/json' || req.url.indexOf('/api') !== -1){
     res.json({message: res.locals.message, error: res.locals.error});
   } else {
     res.render('error');
