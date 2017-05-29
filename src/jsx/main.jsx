@@ -12,13 +12,13 @@ var weatherOptions = {
   json: true
 }
 
-var transitOptions = {
+var ctaBusesOptions = {
   uri: `${document.location.href.replace(/\/$/,'')}/api/cta/buses`,
   json: true
 }
 
 const SubscribedWeatherWidget = LoggedHOC(SubscribedHOC(WeatherWidget, () => request(weatherOptions)));
-const SubscribedCTABusesWidget = LoggedHOC(SubscribedHOC(CTABusesWidget, () => request(transitOptions)));
+const SubscribedCTABusesWidget = LoggedHOC(SubscribedHOC(CTABusesWidget, () => request(ctaBusesOptions)));
 
 ReactDOM.render(
   (<div>
