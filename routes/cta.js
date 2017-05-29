@@ -25,7 +25,7 @@ var cta_bus_api = function(path, qs){
 };
 
 // list of stop predictions for stops in environment variables
-router.get('/buses', cache('2 minutes'), function(req, res, next){
+router.get('/buses', cache('1 minute'), function(req, res, next){
     if(typeof(req.ctabus_stops) === 'undefined'){
       console.error('Specify a list of (comma-separated) stop ids in CTABUS_STOPS environment variable first.');
       return next(new Error('Specify a list of (comma-separated) stop ids in CTABUS_STOPS environment variable first.'));
@@ -56,7 +56,7 @@ router.get('/buses/stops/:route_id/:route_direction', cache('24 hours'), functio
 });
 
 // get a list of predictions for the given stops (comma-separated)
-router.get('/buses/predictions/:stop_ids', cache('2 minutes'), function(req, res, next){
+router.get('/buses/predictions/:stop_ids', cache('1 minute'), function(req, res, next){
   cta_bus_api('/getpredictions', {'stpid': req.params.stop_ids})(req, res, next);
 });
 
