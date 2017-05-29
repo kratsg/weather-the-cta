@@ -1,12 +1,6 @@
 var router = require('express').Router();
-var apicache = require('apicache');
 
-var cache = apicache.middleware;
-if(process.env.REDIS_CACHE === '1'){
-  cache = require('apicache')
-           .options({ redisClient: require('redis').createClient() })
-           .middleware;
-}
+var cache = require('../services/cache');
 
 var request = require('request-promise');
 
