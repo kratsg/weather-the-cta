@@ -41,6 +41,7 @@ app.use(function(req, res, next){
     req.cta_key        = process.env.CTA_KEY;
     req.ctabus_version = process.env.CTABUS_VERSION;
     req.ctabus_stops   = process.env.CTABUS_STOPS;
+    req.ctabus_routes  = process.env.CTABUS_ROUTES;
     res.locals.env     = process.env;
     res.locals.pretty  = (app.get('env') === 'development');
     next();

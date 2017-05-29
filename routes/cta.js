@@ -30,7 +30,7 @@ router.get('/buses', cache('1 minute'), function(req, res, next){
       console.error('Specify a list of (comma-separated) stop ids in CTABUS_STOPS environment variable first.');
       return next(new Error('Specify a list of (comma-separated) stop ids in CTABUS_STOPS environment variable first.'));
     }
-    cta_bus_api('/getpredictions', {'stpid': req.ctabus_stops})(req, res, next);
+    cta_bus_api('/getpredictions', {'stpid': req.ctabus_stops, 'rt': req.ctabus_routes})(req, res, next);
 });
 
 // get the current time used by the CTABus API (maybe for sync purposes)
@@ -56,8 +56,8 @@ router.get('/buses/stops/:route_id/:route_direction', cache('24 hours'), functio
 });
 
 // get a list of predictions for the given stops (comma-separated)
-router.get('/buses/predictions/:stop_ids', cache('1 minute'), function(req, res, next){
-  cta_bus_api('/getpredictions', {'stpid': req.params.stop_ids})(req, res, next);
+router.get('/buses/predictions/:stop_ids/:route_ids?', cache('1 minute'), function(req, res, next){
+  cta_bus_api('/getpredictions', {'stpid': req.params.stop_ids, 'rt': req.params.route_ids})(req, res, next);
 });
 
 module.exports = router;
