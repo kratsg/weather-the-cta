@@ -67,15 +67,18 @@ We support `dotenv <https://github.com/motdotla/dotenv>`_. The best way to set t
 Environment Variables
 ---------------------
 
-===================== ======================================================
+===================== =======================================================
 Variable              Description
---------------------- ------------------------------------------------------
+--------------------- -------------------------------------------------------
 NODE_ENV              Specify ``production`` or ``development``
 CTA_KEY               API key for CTA Bus developer access
 DARKSKY_KEY           Dark Sky API key (Free: 1000 requests per day)
 REDIS_CACHE           API caching using MemoryStore (``0``) or Redis (``1``)
 LAT_LONG              "Latitude,Longitude" of location for weather
-===================== ======================================================
+CTABUS_VERSION        Version of API to use, default is ``v2``
+CTABUS_STOPS          Comma-separated list of CTA Bus stops to retrieve times
+CTABUS_ROUTES         Comma-separated list of bus routes to filter times
+===================== =======================================================
 
 DarkSky
 ~~~~~~~
